@@ -12,15 +12,18 @@ class LegendCalc():
 
 if __name__ == "__main__":
     calc = LegendCalc()
-    a, op, b = input().split()
-    a = int(a); b = int(b)
-    if op == "+":
+    inp = input().replace(" ", "")
+    if "+" in inp:
+        a, b = map(int, inp.split("+"))
         print(calc.plus(a, b))  
-    elif op == "-":
+    elif "-" in inp:
+        a, b = map(int, inp.split("-"))
         print(calc.minus(a, b))  
-    elif op == "*" or op == "x":
+    elif "*" in inp:
+        a, b = map(int, inp.split("*"))
         print(calc.multiple(a, b))  
-    elif op == "/":
+    elif "/" in inp:
+        a, b = map(int, inp.split("/"))
         print(calc.divide(a, b))  
     else:
         print("plz retry")
